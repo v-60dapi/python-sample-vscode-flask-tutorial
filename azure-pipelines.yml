@@ -30,3 +30,10 @@ steps:
     pip install pytest pytest-azurepipelines
     pytest
   displayName: 'pytest'
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'Azure subscription 1(2)(e8515213-fc4a-411b-a304-e14a787e7f0f)'
+    appType: 'webAppLinux'
+    appName: 'msdocs-python-webapp-quickstart-678'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    runtimeStack: 'PYTHON|3.7'
